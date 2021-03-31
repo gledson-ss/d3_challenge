@@ -28,8 +28,12 @@ with open('data_analyse/data/owid-covid-data.csv') as csv_file:
         if count == 1:
             for j in range(size_keywords):
                 index_line.append(line.index(keywords[j]))
+        else:
+            for k in range(size_keywords):
+                dict_keywords[keywords[k]].append(line[index_line[k]])
 
-        if(count == 1):
+        ## break for testing only.
+        if(count == 2):
             break
 
 table = pd.DataFrame({
