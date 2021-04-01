@@ -1,6 +1,7 @@
 import csv
 import pandas as pd
 
+
 keywords = [
     'iso_code',
     'date',
@@ -10,8 +11,8 @@ keywords = [
 ]
 
 size_keywords = len(keywords)
-
 dict_keywords = {}
+country_index_array = []
 
 for i in keywords:
     dict_keywords[i] = []
@@ -25,23 +26,25 @@ with open('data_analyse/data/owid-covid-data.csv') as csv_file:
     index_line = []
     for line in csv_reader:
         count += 1
+
         if count == 1:
+            # print(line)
             for j in range(size_keywords):
                 index_line.append(line.index(keywords[j]))
         else:
             for k in range(size_keywords):
                 dict_keywords[keywords[k]].append(line[index_line[k]])
+        # break for testing only
 
-        ## break for testing only.
-        if(count == 2):
-            break
+Table = pd.DataFrame(dict_keywords)
 
-table = pd.DataFrame({
-    keywords[0]: dict_keywords[keywords[0]],
-    keywords[1]: dict_keywords[keywords[1]],
-    keywords[2]: dict_keywords[keywords[2]],
-    keywords[3]: dict_keywords[keywords[3]],
-    keywords[4]: dict_keywords[keywords[4]]
-})
+index_arr_country = []
 
-print(table)
+index = 0
+country_list = Table['iso_code']
+country_currently = None
+for country in country_list:
+    if country != country_currently:
+        index_arr_country.append(index)
+        country_currently = country
+    index += 1
