@@ -1,6 +1,8 @@
 import csv
 import pandas as pd
 import numpy as np
+import statsmodels.api as sm
+import math
 
 
 def create_table():
@@ -62,7 +64,27 @@ def log_cases(arr):
     return np.log(arr)
 
 
-def predict(days=4):
+def statmodels_linear_regression(days, arr_cases):
+    x = np.arange(days)
+    x = sm.add_constant(x)
+
+    y = arr_cases
+
+    mod = sm.OLS(y, x).fit()
+
+    a, b = mod.params[0], mod.params[1]
+
+    return (a, b)
+
+
+def unlog_value(a, b):
+    log_a = math.exp(a)
+    log_b = math.exp(b)
+
+    return (log_a, log_b)
+
+
+def predict(days):
     Table = create_table()
 
     index_arr_country = []
@@ -78,7 +100,15 @@ def predict(days=4):
     world_cases_sum_per_country = log_cases(world_cases_sum(
         days, index_arr_country, Table))
 
-    print(world_cases_sum_per_country)
+    a, b = statmodels_linear_regression(days, world_cases_sum_per_country)
+
+    a, b = unlog_value(a, b)
+
+    for day in range(1, days + 1):
+        value = int(a * math.pow(b, day))
+        print(day, '->', value)
 
 
-predict()
+days_input = int(input())
+
+predict(days_input)
