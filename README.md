@@ -1,10 +1,9 @@
-<h1 align="center">D3 challenge <h1>
+<h1 align=center>D3 Challenge</h1>
 
 ## 📖 Description
 Nesta solução implementada para prever o número de casos em uma determinada quantidade de dias, foi utilizado a técnica de Modeling Exponential Growth. 
 A tabela de dados csv mais recente utilizado para leitura e análise das tabelas foi da data de 2021-03-31. Basicamente, foi feito uma leitura de casos confirmados de todos países do dia atual mais recente(2021-03-31) até a quantidade de dias informado pelo usuário. Feito isso, é armazenado a soma de ocorrências de casos de todos os países, após isso, é implementado no algoritmo para sabermos a taxa de variação prevista para o crescimento em determinada quantidade de dias.
 Para mais detalhes, o artigo base para a formulação teórica do algoritmo pode ser encontrado no seguinte link: https://towardsdatascience.com/modeling-exponential-growth-49a2b6f22e1f#_=.
-
 
 ## 🚀 Getting Started
 
