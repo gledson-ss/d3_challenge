@@ -14,8 +14,8 @@ Para mais detalhes, o artigo base para a formulação teórica do algoritmo pode
   git clone https://github.com/gledson-ss/d3_challenge
 ```
 
-2. Execução
-    Certifique-se que essas bibliotecas estão instalado na sua maquina:
+2. Execução:
+* Certifique-se que essas bibliotecas estão instalado na sua maquina:
 
     ```shell
     unittest
