@@ -1,4 +1,4 @@
-<h1 align="center">D3 challenge<h1>
+<h1 align="center">D3 challenge <h1>
 
 ## 📖 Description
 Nesta solução implementada para prever o número de casos em uma determinada quantidade de dias, foi utilizado a técnica de Modeling Exponential Growth. 
