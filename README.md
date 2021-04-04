@@ -20,9 +20,9 @@ Para mais detalhes, o artigo base para a formulação teórica do algoritmo pode
     ```shell
     unittest
     csv
-    pandas as pd
-    numpy as np
-    statsmodels.api as sm
+    pandas
+    numpy
+    statsmodels.api
     math
     ```
 
@@ -43,7 +43,7 @@ Para mais detalhes, o artigo base para a formulação teórica do algoritmo pode
 ## 🔧 Testes Unitários
 
 * Utiliza a ferramenta padrão de python para a Execução
-* Análisa o pior caso para mostrar a maior quantidade de tempo gasto em um entrada de dias muito grande
+* Análisa o pior caso para mostrar o maior tempo gasto em um entrada de dias muito grande
   
 ```shell
 python3 -m unittest predict_test.py
